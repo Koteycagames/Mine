@@ -7,7 +7,6 @@
         body {
             margin: 0;
             font-family: 'Courier New', monospace;
-            /* Тот же фон, что и везде, с настройкой для четкости */
             background: url('./textures/blocks/dirt.png');
             background-size: 128px;
             image-rendering: auto;
@@ -21,16 +20,14 @@
             overflow: hidden;
         }
 
-        /* Затемнение фона */
         body::before {
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Чуть светлее в главном меню */
+            background: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
 
-        /* Логотип (текстом, но можно заменить на картинку) */
         .logo {
             font-size: 72px;
             font-weight: bold;
@@ -40,7 +37,6 @@
             position: relative;
         }
 
-        /* Желтый сплэш-текст (как в майнкрафте) */
         .splash {
             font-size: 24px;
             color: #ff0;
@@ -73,9 +69,9 @@
             color: #ddd;
             background: #777;
             border: 2px solid #000;
-            border-top: 2px solid #aaa; /* Светлый верх */
+            border-top: 2px solid #aaa;
             border-left: 2px solid #aaa;
-            border-bottom: 2px solid #444; /* Темный низ */
+            border-bottom: 2px solid #444;
             border-right: 2px solid #444;
             cursor: pointer;
             text-shadow: 1px 1px #000;
@@ -83,15 +79,8 @@
             position: relative;
         }
 
-        .mc-btn:hover {
-            background: #889;
-            color: #fff;
-        }
-
-        .mc-btn:active {
-            border: 2px solid #000; /* Вдавленный эффект */
-            background: #666;
-        }
+        .mc-btn:hover { background: #889; color: #fff; }
+        .mc-btn:active { border: 2px solid #000; background: #666; }
 
         .footer {
             position: absolute;
@@ -112,33 +101,22 @@
 
     <div class="menu-container">
         <button class="mc-btn" onclick="window.location.href='worldselect.html'">ОДИНОЧНАЯ ИГРА</button>
-        
         <button class="mc-btn" onclick="window.location.href='multiplayer.html'">СЕТЕВАЯ ИГРА</button>
-        
-        <button class="mc-btn" onclick="alert('Настройки пока не готовы!')">НАСТРОЙКИ</button>
-        
+        <button class="mc-btn" onclick="window.location.href='settings.html'">НАСТРОЙКИ</button>
         <button class="mc-btn" onclick="window.close()">ВЫХОД</button>
     </div>
 
     <div class="footer">
-        Minecraft Web Clone v0.5<br>
+        Minecraft Web Clone v0.6<br>
         Not affiliated with Mojang
     </div>
 
     <script>
-        // Просто список забавных фраз
         const splashes = [
-            "HTML5 Edition!",
-            "No creepers yet!",
-            "Check out the code!",
-            "Multiplayer is working!",
-            "Hello YouTube!",
-            "Made with Three.js?",
-            "100% pure JavaScript!",
-            "Also try Terraria!"
+            "HTML5 Edition!", "No creepers yet!", "Check out the code!",
+            "Multiplayer is working!", "Hello YouTube!", "100% pure JavaScript!",
+            "Also try Terraria!", "PBR Textures supported!"
         ];
-        
-        // Выбираем случайную фразу
         document.getElementById('splash-text').innerText = splashes[Math.floor(Math.random() * splashes.length)];
     </script>
 
